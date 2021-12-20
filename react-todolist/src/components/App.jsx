@@ -8,7 +8,17 @@ import defaultNotes from "../defaultNotes.js";
 function App() {
     const [notes, setNotes] = useState(defaultNotes);
 
+    let nextId = ((notes.length === 0) 
+        ? 0
+        : 1+notes
+            .map((note) => parseInt(note.id))
+            .reduce((a,b) => Math.max(a,b))
+    );
+
     function addNote(newNote) {
+        newNote.id = nextId.toString();
+        nextId += 1; 
+        console.log("Creating note id %s", newNote.id);
         setNotes(
             prevNotes => [...prevNotes, newNote]
         );
@@ -38,7 +48,6 @@ function App() {
         <div>
             <Header />
             <AddNoteForm 
-                nextId={notes.length+1} 
                 addNote={addNote}
             />
             {notes.map(renderNote)}
