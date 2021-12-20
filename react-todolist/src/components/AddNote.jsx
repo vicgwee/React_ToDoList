@@ -1,9 +1,8 @@
 import React, {useState} from "react"
-import notes from "../notes";
 
 // From https://www.w3schools.com/react/react_forms.asp
 
-function AddNote() {
+function AddNote(props) {
     const [inputs, setInputs] = useState({});
     const handleChange = (e) => {
         const name = e.target.name;
@@ -13,14 +12,11 @@ function AddNote() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let nextId = notes.length + 1
-        notes.push( {
-            id:nextId.toString(),
+        props.addNote({
+            id:props.nextId.toString(),
             title:inputs.title,
             content: inputs.content
         });
-        nextId += 1
-        console.log(notes);
     }
   
     return <div className="note">
