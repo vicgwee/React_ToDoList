@@ -1,11 +1,11 @@
 const defaultNotes = [
     {
-        id:"1",
+        id:"0",
         title: "Make this website work",
         content: "I guess it works...?"
     },
     {
-        id:"2",
+        id:"1",
         title: "Make more websites",
         content: "Just do it"
     }

@@ -2,7 +2,7 @@ import React from "react"
 
 function Note(props) {
     function handleClick(){
-        console.log("Deleting %s",props.id)
+        console.log("Deleting note id %s",props.id)
         props.onDelete(props.id)
     }
 

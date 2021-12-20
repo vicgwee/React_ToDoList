@@ -19,7 +19,6 @@ function AddNoteForm(props) {
         e.preventDefault();
         props.addNote(
             {
-                id:props.nextId.toString(),
                 title:inputs.title,
                 content: inputs.content
             }
