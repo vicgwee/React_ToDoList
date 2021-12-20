@@ -20,17 +20,18 @@ function AddNote(props) {
     }
   
     return <div className="note">
-        <h1>New Note</h1>
         <form onSubmit={handleSubmit}>
             <input 
                 type="text"
                 name="title"
+                placeholder="Title"
                 value = {inputs.title || ""}
                 onChange={handleChange}
             />
             <input 
                 type="text"
                 name="content"
+                placeholder="Content"
                 value = {inputs.content || ""}
                 onChange={handleChange}
             />
