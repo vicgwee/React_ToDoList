@@ -9,7 +9,9 @@ function App() {
     const [notes, setNotes] = useState(defaultNotes);
 
     function addNote(newNote) {
-        setNotes((prevNotes) => [...prevNotes, newNote])
+        setNotes(
+            prevNotes => [...prevNotes, newNote]
+        )
     }
 
     function deleteNoteById(id) {
@@ -26,7 +28,7 @@ function App() {
         id={note.id}
         title={note.title}
         content={note.content}
-        deleteNoteById={deleteNoteById}
+        onDelete={deleteNoteById}
         />;
     }
 
