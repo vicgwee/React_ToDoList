@@ -8,7 +8,7 @@ import defaultNotes from "../defaultNotes.js";
 function App() {
     const [notes, setNotes] = useState(defaultNotes);
 
-    function AddNoteForm(newNote) {
+    function addNote(newNote) {
         setNotes((prevNotes) => [...prevNotes, newNote])
     }
 
@@ -21,7 +21,7 @@ function App() {
 
     return <div>
         <Header />
-        <AddNoteForm nextId={notes.length} AddNoteForm={AddNoteForm}/>
+        <AddNoteForm nextId={notes.length} addNote={addNote}/>
         {notes.map(renderNote)}
         <Footer />
     </div>;

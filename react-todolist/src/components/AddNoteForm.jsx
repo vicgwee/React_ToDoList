@@ -12,7 +12,7 @@ function AddNoteForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.AddNoteForm({
+        props.addNote({
             id:props.nextId.toString(),
             title:inputs.title,
             content: inputs.content
