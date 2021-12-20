@@ -9,22 +9,42 @@ function App() {
     const [notes, setNotes] = useState(defaultNotes);
 
     function addNote(newNote) {
-        setNotes((prevNotes) => [...prevNotes, newNote])
+        setNotes(
+            prevNotes => [...prevNotes, newNote]
+        );
+    }
+
+    function deleteNoteById(id) {
+        setNotes(
+            prevNotes => prevNotes.filter(
+                note => note.id !== id
+            )
+        );
     }
 
     function renderNote(note) {
-        return <Note 
-        key={note.id}
-        title={note.title}
-        content={note.content}/>;
+        return (
+            <Note 
+                key={note.id}
+                id={note.id}
+                title={note.title}
+                content={note.content}
+                onDelete={deleteNoteById}
+            />
+        );
     }
 
-    return <div>
-        <Header />
-        <AddNoteForm nextId={notes.length} addNote={addNote}/>
-        {notes.map(renderNote)}
-        <Footer />
-    </div>;
+    return (
+        <div>
+            <Header />
+            <AddNoteForm 
+                nextId={notes.length+1} 
+                addNote={addNote}
+            />
+            {notes.map(renderNote)}
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
