@@ -12,11 +12,22 @@ function App() {
         setNotes((prevNotes) => [...prevNotes, newNote])
     }
 
+    function deleteNoteById(id) {
+        setNotes(
+            prevNotes => prevNotes.filter(
+                note => note.id !== id
+            )
+        )
+    }
+
     function renderNote(note) {
         return <Note 
         key={note.id}
+        id={note.id}
         title={note.title}
-        content={note.content}/>;
+        content={note.content}
+        deleteNoteById={deleteNoteById}
+        />;
     }
 
     return <div>
