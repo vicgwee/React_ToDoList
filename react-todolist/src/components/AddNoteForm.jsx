@@ -35,9 +35,9 @@ function AddNoteForm(props) {
                     value = {inputs.title || ""}
                     onChange={handleChange}
                 />
-                <input 
-                    type="text"
+                <textarea
                     name="content"
+                    rows="3"
                     placeholder="Content"
                     value = {inputs.content || ""}
                     onChange={handleChange}
