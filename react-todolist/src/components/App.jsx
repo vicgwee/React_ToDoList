@@ -3,7 +3,7 @@ import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Note from "./Note.jsx";
 import notes from "../notes"
-import NewNote from "./NewNote.jsx";
+import AddNote from "./AddNote.jsx";
 
 function createNote(note) {
     return <Note 
@@ -15,7 +15,7 @@ function createNote(note) {
 function App() {
     return <div>
         <Header />
-        <NewNote />
+        <AddNote />
         {notes.map(createNote)}
         <Footer />
     </div>;

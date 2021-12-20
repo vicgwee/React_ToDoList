@@ -3,7 +3,7 @@ import notes from "../notes";
 
 // From https://www.w3schools.com/react/react_forms.asp
 
-function NewNote() {
+function AddNote() {
     const [inputs, setInputs] = useState({});
     const handleChange = (e) => {
         const name = e.target.name;
@@ -43,4 +43,4 @@ function NewNote() {
     </div>;
   }
 
-export default NewNote;
+export default AddNote;
