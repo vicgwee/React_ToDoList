@@ -1,12 +1,12 @@
 const notes = [
     {
         id:"1",
-        header: "Make a website",
+        title: "Make a website",
         content: "Does this count?"
     },
     {
         id:"2",
-        header: "Make more websites",
+        title: "Make more websites",
         content: "just do it"
     }
 ]
