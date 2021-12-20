@@ -3,9 +3,10 @@ import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Note from "./Note.jsx";
 import AddNote from "./AddNote.jsx";
+import defaultNotes from "../defaultNotes.js";
 
 function App() {
-    const [notes, setNotes] = useState([]);
+    const [notes, setNotes] = useState(defaultNotes);
 
     function addNote(newNote) {
         setNotes((prevNotes) => [...prevNotes, newNote])
