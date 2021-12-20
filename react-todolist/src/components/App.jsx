@@ -34,15 +34,17 @@ function App() {
         );
     }
 
-    return <div>
-        <Header />
-        <AddNoteForm 
-            nextId={notes.length+1} 
-            addNote={addNote}
-        />
-        {notes.map(renderNote)}
-        <Footer />
-    </div>;
+    return (
+        <div>
+            <Header />
+            <AddNoteForm 
+                nextId={notes.length+1} 
+                addNote={addNote}
+            />
+            {notes.map(renderNote)}
+            <Footer />
+        </div>
+    );
 }
 
 export default App;
