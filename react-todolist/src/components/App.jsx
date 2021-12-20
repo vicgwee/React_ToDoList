@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Note from "./Note.jsx";
-import AddNote from "./AddNote.jsx";
+import AddNoteForm from "./AddNoteForm.jsx";
 import defaultNotes from "../defaultNotes.js";
 
 function App() {
     const [notes, setNotes] = useState(defaultNotes);
 
-    function addNote(newNote) {
+    function AddNoteForm(newNote) {
         setNotes((prevNotes) => [...prevNotes, newNote])
     }
 
@@ -21,7 +21,7 @@ function App() {
 
     return <div>
         <Header />
-        <AddNote nextId={notes.length} addNote={addNote}/>
+        <AddNoteForm nextId={notes.length} AddNoteForm={AddNoteForm}/>
         {notes.map(renderNote)}
         <Footer />
     </div>;

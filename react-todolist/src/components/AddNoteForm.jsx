@@ -2,7 +2,7 @@ import React, {useState} from "react"
 
 // From https://www.w3schools.com/react/react_forms.asp
 
-function AddNote(props) {
+function AddNoteForm(props) {
     const [inputs, setInputs] = useState({});
     const handleChange = (e) => {
         const name = e.target.name;
@@ -12,7 +12,7 @@ function AddNote(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.addNote({
+        props.AddNoteForm({
             id:props.nextId.toString(),
             title:inputs.title,
             content: inputs.content
@@ -40,4 +40,4 @@ function AddNote(props) {
     </div>;
   }
 
-export default AddNote;
+export default AddNoteForm;
