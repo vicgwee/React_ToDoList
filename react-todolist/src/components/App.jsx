@@ -11,7 +11,7 @@ function App() {
     function addNote(newNote) {
         setNotes(
             prevNotes => [...prevNotes, newNote]
-        )
+        );
     }
 
     function deleteNoteById(id) {
@@ -19,22 +19,27 @@ function App() {
             prevNotes => prevNotes.filter(
                 note => note.id !== id
             )
-        )
+        );
     }
 
     function renderNote(note) {
-        return <Note 
-        key={note.id}
-        id={note.id}
-        title={note.title}
-        content={note.content}
-        onDelete={deleteNoteById}
-        />;
+        return (
+            <Note 
+                key={note.id}
+                id={note.id}
+                title={note.title}
+                content={note.content}
+                onDelete={deleteNoteById}
+            />
+        );
     }
 
     return <div>
         <Header />
-        <AddNoteForm nextId={notes.length} addNote={addNote}/>
+        <AddNoteForm 
+            nextId={notes.length+1} 
+            addNote={addNote}
+        />
         {notes.map(renderNote)}
         <Footer />
     </div>;
