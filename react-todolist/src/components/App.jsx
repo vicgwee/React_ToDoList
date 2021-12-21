@@ -32,14 +32,29 @@ function App() {
         );
     }
 
+    function toggleNoteDoneById(id) {
+        setNotes(
+            prevNotes => prevNotes.map(
+                note => {
+                    if(note.id === id) {
+                        note.attributes.done = 1-note.attributes.done;
+                    }
+                    return note;
+                }
+            )
+        );
+    }
+
     function renderNote(note) {
         return (
             <Note 
                 key={note.id}
                 id={note.id}
+                attributes={note.attributes}
                 title={note.title}
                 content={note.content}
                 onDelete={deleteNoteById}
+                onClick={toggleNoteDoneById}
             />
         );
     }

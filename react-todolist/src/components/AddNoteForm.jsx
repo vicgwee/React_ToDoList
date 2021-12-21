@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import ToggleSwitch from "./ToggleSwitch";
 
 // Adapted from https://www.w3schools.com/react/react_forms.asp
 
@@ -20,7 +21,11 @@ function AddNoteForm(props) {
         props.addNote(
             {
                 title:inputs.title,
-                content: inputs.content
+                content: inputs.content,
+                attributes: {
+                    done: 0,
+                    urgent: parseInt(inputs.urgent)
+                }
             }
         );
     }
@@ -41,6 +46,11 @@ function AddNoteForm(props) {
                     placeholder="Content"
                     value = {inputs.content || ""}
                     onChange={handleChange}
+                />
+                <ToggleSwitch 
+                    name = "urgent"
+                    value = {inputs.urgent || 0}
+                    onChange = {handleChange}
                 />
                 <button type="submit">Add</button>
             </form>
