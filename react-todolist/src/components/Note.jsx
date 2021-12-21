@@ -9,12 +9,12 @@ function Note(props) {
     }
 
     function handleDeleteButtonClick(){
-        console.log("Deleting note id %s",props.id)
-        props.onDelete(props.id)
+        console.log("Deleting note id %s",props.id);
+        props.onDelete(props.id);
     }
 
     return (
-        <div className={"note " + done.toString()} onClick={handleNoteClick}>
+        <div className={"note note--" + ((done)?"done":"not-done")} onClick={handleNoteClick}>
             <button type="button" onClick={handleDeleteButtonClick}>x</button>
             <h1>{props.title}</h1>
             <p>{props.content}</p>
