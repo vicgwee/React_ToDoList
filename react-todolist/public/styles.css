@@ -49,7 +49,7 @@ footer p {
 }
 
 .note--done {
-    background: #aaa;
+    opacity: 50%;
     text-decoration: line-through;
 }
 
