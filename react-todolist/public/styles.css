@@ -53,6 +53,10 @@ footer p {
     text-decoration: line-through;
 }
 
+.note--urgent {
+    background: #fa3;
+}
+
 
 .note h1 {
     font-size: 1.1em;
