@@ -4,8 +4,8 @@ function Note(props) {
     const [done, setDone] = useState(0);
 
     function handleNoteClick(){
-        setDone(val => 1-val);
         console.log("Clicked note %s, done is %i", props.id, done);
+        props.onClick(props.id);
     }
 
     function handleDeleteButtonClick(){
@@ -14,8 +14,8 @@ function Note(props) {
     }
 
     let className = "note";
-    className += " note--" + ((done)?"done":"not-done");
-    //className += " note-- " + ((urgent)?"urgent":"not-urgent");
+    className += " note--" + ((props.attributes.done)?"done":"not-done");
+    className += " note--" + ((props.attributes.urgent)?"urgent":"not-urgent");
 
     return (
         <div className={className} onClick={handleNoteClick}>
