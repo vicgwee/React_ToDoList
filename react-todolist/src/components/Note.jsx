@@ -1,15 +1,14 @@
 import React, { useState } from "react"
 
 function Note(props) {
-    const [done, setDone] = useState(0);
 
     function handleNoteClick(){
-        console.log("Clicked note %s, done is %i", props.id, done);
+        console.log("Clicked note id %s", props.id);
         props.onClick(props.id);
     }
 
     function handleDeleteButtonClick(){
-        console.log("Deleting note id %s",props.id);
+        console.log("Deleting note id %s", props.id);
         props.onDelete(props.id);
     }
 
