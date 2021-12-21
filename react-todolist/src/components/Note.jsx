@@ -13,8 +13,12 @@ function Note(props) {
         props.onDelete(props.id);
     }
 
+    let className = "note";
+    className += " note--" + ((done)?"done":"not-done");
+    //className += " note-- " + ((urgent)?"urgent":"not-urgent");
+
     return (
-        <div className={"note note--" + ((done)?"done":"not-done")} onClick={handleNoteClick}>
+        <div className={className} onClick={handleNoteClick}>
             <button type="button" onClick={handleDeleteButtonClick}>x</button>
             <h1>{props.title}</h1>
             <p>{props.content}</p>
