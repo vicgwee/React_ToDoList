@@ -20,7 +20,11 @@ function AddNoteForm(props) {
         props.addNote(
             {
                 title:inputs.title,
-                content: inputs.content
+                content: inputs.content,
+                attributes: {
+                    done: 0,
+                    urgent: inputs.urgent
+                }
             }
         );
     }
