@@ -1,5 +1,6 @@
 import React, {useState} from "react"
-import ToggleSwitch from "./ToggleSwitch";
+import ToggleSwitch from "./ToggleSwitch"
+import {Button, TextField} from '@mui/material'
 
 // Adapted from https://www.w3schools.com/react/react_forms.asp
 
@@ -33,26 +34,27 @@ function AddNoteForm(props) {
     return (
         <div className="note">
             <form onSubmit={handleSubmit}>
-                <input 
+                <TextField 
                     type="text"
                     name="title"
                     placeholder="Title"
                     value = {inputs.title || ""}
                     onChange={handleChange}
                 />
-                <textarea
+                <TextField
                     name="content"
-                    rows="3"
+                    multiline
+                    rows={3}
                     placeholder="Content"
                     value = {inputs.content || ""}
                     onChange={handleChange}
                 />
                 <ToggleSwitch 
                     name = "urgent"
-                    value = {inputs.urgent || 0}
+                    checked = {inputs.urgent || 0}
                     onChange = {handleChange}
                 />
-                <button type="submit">Add</button>
+                <Button type="submit">Add</Button>
             </form>
         </div>
     );
