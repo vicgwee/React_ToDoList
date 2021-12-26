@@ -10,7 +10,7 @@ function ToggleSwitch(props) {
         <div className="toggle-switch">
             <Checkbox
                 name={props.name}
-                checked={props.checked}
+                checked={Boolean(props.checked === 1)}
                 onChange={handleClick}
             />
             <label className="toggle-switch-label" htmlFor="toggleSwitch">

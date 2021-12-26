@@ -51,10 +51,10 @@ function AddNoteForm(props) {
                 />
                 <ToggleSwitch 
                     name = "urgent"
-                    checked = {inputs.urgent || 0}
+                    checked = {parseInt(inputs.urgent) || 0}
                     onChange = {handleChange}
                 />
-                <Button type="submit">Add</Button>
+                <Button type="submit">+</Button>
             </form>
         </div>
     );
