@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import {Button} from "@mui/material"
 
 function Note(props) {
 
@@ -18,7 +19,7 @@ function Note(props) {
 
     return (
         <div className={className} onClick={handleNoteClick}>
-            <button type="button" onClick={handleDeleteButtonClick}>x</button>
+            <Button type="button" onClick={handleDeleteButtonClick}>x</Button>
             <h1>{props.title}</h1>
             <p>{props.content}</p>
         </div>

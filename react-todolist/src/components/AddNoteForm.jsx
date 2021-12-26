@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import ToggleSwitch from "./ToggleSwitch"
-import {Button, TextField} from '@mui/material'
+import {Fab, TextField} from '@mui/material'
+import AddIcon from '@mui/icons-material/Add';
 
 // Adapted from https://www.w3schools.com/react/react_forms.asp
 
@@ -54,7 +55,9 @@ function AddNoteForm(props) {
                     checked = {parseInt(inputs.urgent) || 0}
                     onChange = {handleChange}
                 />
-                <Button type="submit">+</Button>
+                <Fab type="submit" color="primary" aria-label="add">
+                    <AddIcon />
+                </Fab>
             </form>
         </div>
     );
