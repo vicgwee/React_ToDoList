@@ -1,4 +1,5 @@
 import React from "react"
+import {Checkbox} from "@mui/material"
 
 function ToggleSwitch(props) {
     const handleClick = (e) => {
@@ -7,11 +8,9 @@ function ToggleSwitch(props) {
     }
     return (
         <div className="toggle-switch">
-            <input
-                type="checkbox"
-                className="toggle-switch-checkbox"
+            <Checkbox
                 name={props.name}
-                value={props.value}
+                checked={Boolean(props.checked === 1)}
                 onChange={handleClick}
             />
             <label className="toggle-switch-label" htmlFor="toggleSwitch">

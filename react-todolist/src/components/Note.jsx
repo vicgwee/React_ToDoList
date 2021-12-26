@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/DeleteOutline';
 
 function Note(props) {
 
@@ -7,7 +9,7 @@ function Note(props) {
         props.onClick(props.id);
     }
 
-    function handleDeleteButtonClick(){
+    function handleDeleteButtonClick(){ 
         console.log("Deleting note id %s", props.id);
         props.onDelete(props.id);
     }
@@ -18,7 +20,9 @@ function Note(props) {
 
     return (
         <div className={className} onClick={handleNoteClick}>
-            <button type="button" onClick={handleDeleteButtonClick}>x</button>
+            <IconButton color="primary" onClick={handleDeleteButtonClick} aria-label="delete">
+                <DeleteIcon />
+            </IconButton>
             <h1>{props.title}</h1>
             <p>{props.content}</p>
         </div>
