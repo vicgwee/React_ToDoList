@@ -62,10 +62,12 @@ function App() {
     return (
         <div>
             <Header />
-            <AddNoteForm 
-                addNote={addNote}
-            />
-            {notes.map(renderNote)}
+            <div className="container">
+                <AddNoteForm 
+                    addNote={addNote}
+                />
+                {notes.map(renderNote)}
+            </div>
             <Footer />
         </div>
     );
