@@ -33,7 +33,7 @@ function AddNoteForm(props) {
     }
   
     return (
-        <div className="note">
+        <div className="note note--form">
             <form onSubmit={handleSubmit}>
                 <TextField 
                     type="text"
@@ -41,7 +41,9 @@ function AddNoteForm(props) {
                     placeholder="Title"
                     value = {inputs.title || ""}
                     onChange={handleChange}
+                    fullWidth
                 />
+                <br></br>
                 <TextField
                     name="content"
                     multiline
@@ -49,6 +51,7 @@ function AddNoteForm(props) {
                     placeholder="Content"
                     value = {inputs.content || ""}
                     onChange={handleChange}
+                    fullWidth
                 />
                 <ToggleSwitch 
                     name = "urgent"
