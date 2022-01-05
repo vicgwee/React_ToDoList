@@ -75,6 +75,10 @@ footer p {
     word-wrap: break-word;
 }
 
+.note__delete-icon {
+    float:right;
+}
+
 @media only screen and (min-width: 768px) {
     .container {
         flex-flow: row wrap;
