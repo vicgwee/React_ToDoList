@@ -47,20 +47,26 @@ function AddNoteForm(props) {
                 <TextField
                     name="content"
                     multiline
-                    rows={3}
+                    id="outlined-textarea"
                     placeholder="Content"
                     value = {inputs.content || ""}
                     onChange={handleChange}
                     fullWidth
                 />
+                <br></br>
+                <Fab 
+                    type="submit"
+                    color="primary" 
+                    aria-label="add"
+                    className="note--form__fab"
+                >
+                    <AddIcon />
+                </Fab>
                 <ToggleSwitch 
                     name = "urgent"
                     checked = {parseInt(inputs.urgent) || 0}
                     onChange = {handleChange}
                 />
-                <Fab type="submit" color="primary" aria-label="add">
-                    <AddIcon />
-                </Fab>
             </form>
         </div>
     );

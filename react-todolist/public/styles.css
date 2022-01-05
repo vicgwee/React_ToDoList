@@ -76,7 +76,11 @@ footer p {
 }
 
 .note__delete-icon {
-    float:right;
+    float: right;
+}
+
+.note--form__fab {
+    float: right;
 }
 
 @media only screen and (min-width: 768px) {
