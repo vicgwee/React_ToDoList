@@ -1,5 +1,6 @@
 import React from "react"
 import {Checkbox} from "@mui/material"
+import FormControlLabel from '@mui/material/FormControlLabel'
 
 function ToggleSwitch(props) {
     const handleClick = (e) => {
@@ -8,15 +9,17 @@ function ToggleSwitch(props) {
     }
     return (
         <div className="toggle-switch">
-            <Checkbox
-                name={props.name}
-                checked={Boolean(props.checked === 1)}
-                onChange={handleClick}
+            <FormControlLabel 
+                control={
+                    <Checkbox
+                        name={props.name}
+                        checked={Boolean(props.checked === 1)}
+                        onChange={handleClick}
+                        size="large"
+                    />
+                }
+                label="Urgent"
             />
-            <label className="toggle-switch-label" htmlFor="toggleSwitch">
-                <span className="toggle-switch-inner" />
-                <span className="toggle-switch-switch" />
-            </label>
       </div>
     );
 }
